@@ -1,73 +1,78 @@
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
 }
+
 body {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  text-align: center;
-  background-color: #f5f5f5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  background-color: #0f0f13;
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
 }
 
-a {
-  color: teal;
-  padding: 4px;
-}
-
-a:hover,
-a:focus {
-  color: purple;
-  background-color: #f5f5f5;
-  border-radius: 500px;
-}
-
 .wrapper {
-  margin: auto;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  position: relative;
-  background-color: #ffffff;
-  opacity: 0.8;
-  display: flex;
-  border-radius: 250px;
-  height: 300px;
-  width: 300px;
-  align-items: center;
-  justify-content: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 32px 40px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
 }
 
 .icons {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 20px 0;
+  gap: 16px;
+  margin: 0;
   padding: 0;
-}
-
-.icon {
-  margin: 20px;
   list-style: none;
-  width: 90px;
-  height: 90px;
 }
 
 .icon > a {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  width: 100px;
+  height: 100px;
+  justify-content: center;
+  border-radius: 16px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border: 1px solid transparent;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.icon > a:hover,
+.icon > a:focus-visible {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.95);
+  transform: translateY(-2px);
+  outline: none;
 }
 
 .icon img {
-  width: 50px;
-  margin-bottom: 10px;
+  width: 44px;
+  height: 44px;
+  filter: invert(1) opacity(0.6);
+  transition: filter 0.2s ease, transform 0.2s ease;
 }
 
-.icon a {
-  text-align: center;
-}
+.icon > a:hover img,
+.icon > a:focus-visible img {
+  filter: invert(1) opacity(1);
+  transform: scale(1.08);
 }
