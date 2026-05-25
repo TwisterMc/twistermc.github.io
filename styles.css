@@ -9,11 +9,20 @@ body {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
   background-color: #0f0f13;
   background-image:
-    radial-gradient(ellipse at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
+    radial-gradient(
+      ellipse at 20% 50%,
+      rgba(99, 102, 241, 0.15) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 80% 20%,
+      rgba(168, 85, 247, 0.1) 0%,
+      transparent 50%
+    );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,10 +39,12 @@ body {
 
 .icons {
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
   margin: 0;
   padding: 0;
   list-style: none;
+  justify-content: center;
 }
 
 .icon > a {
@@ -42,8 +53,8 @@ body {
   align-items: center;
   gap: 10px;
   padding: 12px;
-  width: 100px;
   height: 100px;
+  min-width: 100px;
   justify-content: center;
   border-radius: 16px;
   text-decoration: none;
@@ -52,7 +63,11 @@ body {
   font-weight: 500;
   letter-spacing: 0.02em;
   border: 1px solid transparent;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .icon > a:hover,
@@ -68,11 +83,37 @@ body {
   width: 44px;
   height: 44px;
   filter: invert(1) opacity(0.6);
-  transition: filter 0.2s ease, transform 0.2s ease;
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
+}
+
+.icon img.icon-img-light {
+  filter: opacity(0.6);
 }
 
 .icon > a:hover img,
 .icon > a:focus-visible img {
   filter: invert(1) opacity(1);
   transform: scale(1.08);
+}
+
+.icon > a:hover img.icon-img-light,
+.icon > a:focus-visible img.icon-img-light {
+  filter: opacity(1);
+}
+
+@media (max-width: 560px) {
+  .wrapper {
+    width: min(100% - 32px, 320px);
+    padding: 24px;
+  }
+
+  .icons {
+    justify-content: space-between;
+  }
+
+  .icon > a {
+    width: 120px;
+  }
 }
